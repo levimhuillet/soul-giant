@@ -107,6 +107,7 @@ namespace SoulGiant
                 Vector2 launchDir = ((Vector2)m_TargetObj.transform.position - projectileStartPos).normalized;
 
                 Projectile projectile = GameMechanics.AllocProjectile(m_InitData.ProjectileData, m_InitData.LaunchSpeed, launchDir);
+                projectile.transform.parent = this.transform;
                 projectile.transform.position = projectileStartPos;
                 projectile.Launch();
 

@@ -11,6 +11,8 @@ namespace SoulGiant {
 
         [SerializeField] private ProjectileData m_InitData;
 
+        private TempAlloc<Projectile> m_TempAlloc;
+
         private float m_Speed;
         private Vector3 m_TravelDir;
 
@@ -23,6 +25,8 @@ namespace SoulGiant {
         }
 
         private State m_state;
+
+        #region Unity Callbacks
 
         private void Update() {
             switch (m_state) {
@@ -40,9 +44,25 @@ namespace SoulGiant {
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision) {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
+                // Apply damage (dispatch event)
+
+                // Dispose projectile
+                m_TempAlloc.Dispose();
+            }
+            else if (collision.gameObject.layer == LayerMask.NameToLayer("Solid")) {
+                // Dispose projectile
+                m_TempAlloc.Dispose();
+            }
+        }
+
+        #endregion // Unity Callbacks
+
         #region External
 
-        public void Init(ProjectileData pData, float speed, Vector3 travelDir) {
+        public void Init(TempAlloc<Projectile> alloc, ProjectileData pData, float speed, Vector3 travelDir) {
+            m_TempAlloc = alloc;
             m_InitData = pData;
             // TODO: apply pData (sprite, etc.)
 

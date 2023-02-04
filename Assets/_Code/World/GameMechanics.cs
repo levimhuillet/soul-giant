@@ -22,7 +22,7 @@ namespace SoulGiant
             TempAlloc<Projectile> projectileAlloc = Instance.m_ProjectilePools.ProjectilePool.TempAlloc();
             Projectile projectile = projectileAlloc.Object;
 
-            projectile.Init(pData, speed, launchDir);
+            projectile.Init(projectileAlloc, pData, speed, launchDir);
 
             return projectile;
         }
