@@ -9,6 +9,14 @@ namespace SoulGiant {
 
         private readonly EventDispatcher<object> m_EventDispatcher = new EventDispatcher<object>();
 
+        protected override void OnAssigned() {
+            Application.targetFrameRate = 60;
+        }
+
+        private void LateUpdate() {
+            m_EventDispatcher.FlushQueue();
+        }
+
         static public EventDispatcher<object> Event {
             get { return I.m_EventDispatcher; }
         }
