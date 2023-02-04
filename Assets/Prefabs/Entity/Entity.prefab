@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InitData: {fileID: 11400000, guid: bd10d65ed47ac1a4d89070329adf2b86, type: 2}
+  m_BodySpriteSR: {fileID: 8664390947455143472}
   m_ProximityDetector: {fileID: 7707719482945887033}
 --- !u!1 &7635841379597562904
 GameObject:

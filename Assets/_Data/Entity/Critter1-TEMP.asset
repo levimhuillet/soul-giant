@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e09ade63fea79e40a5a9695871e01af, type: 3}
   m_Name: Critter1-TEMP
   m_EditorClassIdentifier: 
-  m_BodySprite: {fileID: 21300000, guid: e3f882d7ee093844dbe0fa51a0fec141, type: 3}
-  m_ProjectileData: {fileID: 11400000, guid: 6d7831b11f09e964a85ba53274b91305, type: 2}
+  BodySprite: {fileID: 21300000, guid: e3f882d7ee093844dbe0fa51a0fec141, type: 3}
+  ProjectileData: {fileID: 11400000, guid: 6d7831b11f09e964a85ba53274b91305, type: 2}
+  ProximityDetectorRadius: 2
+  ReloadRate: 2
+  LaunchSpeed: 3
+  FireOffsetRange: 0.25

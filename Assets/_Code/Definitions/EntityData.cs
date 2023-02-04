@@ -9,5 +9,10 @@ namespace SoulGiant {
     {
         public Sprite BodySprite;
         public ProjectileData ProjectileData;
+        public float ProximityDetectorRadius = 2;
+
+        public float ReloadRate;
+        public float LaunchSpeed;
+        public float FireOffsetRange; // max aim angle deviation
     }
 }

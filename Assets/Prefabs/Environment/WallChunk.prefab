@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6785625330647956463}
   - component: {fileID: 6785625330647956462}
   - component: {fileID: 7899929391439426652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallChunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -829041397
-  m_SortingLayer: 2
+  m_SortingLayerID: -1648293133
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8a47407327d38564ba7ac5635a0ee9dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

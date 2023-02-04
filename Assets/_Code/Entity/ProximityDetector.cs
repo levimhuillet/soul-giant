@@ -5,27 +5,36 @@ using UnityEngine;
 
 namespace SoulGiant
 {
+    public class ProximityEventArgs : EventArgs
+    {
+        public GameObject Target;
+
+        public ProximityEventArgs(GameObject target) {
+            Target = target;
+        }
+    }
+
     public class ProximityDetector : MonoBehaviour
     {
-        [SerializeField] private Collider2D Collider;
+        public CircleCollider2D Collider;
 
-        public event EventHandler PlayerEntered;
+        public event EventHandler<ProximityEventArgs> PlayerEntered;
 
-        public event EventHandler PlayerExited;
+        public event EventHandler<ProximityEventArgs> PlayerExited;
 
         #region Unity Callbacks
 
         private void OnTriggerEnter2D(Collider2D collision) {
             // check if collision is player
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
-                PlayerEntered?.Invoke(this, EventArgs.Empty);
+                PlayerEntered?.Invoke(this, new ProximityEventArgs(collision.gameObject));
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
             // check if collision is player
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
-                PlayerExited?.Invoke(this, EventArgs.Empty);
+                PlayerExited?.Invoke(this, new ProximityEventArgs(collision.gameObject));
             }
         }
 
