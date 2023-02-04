@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodySprite: {fileID: 21300000, guid: e3f882d7ee093844dbe0fa51a0fec141, type: 3}
   ProjectileData: {fileID: 11400000, guid: 6d7831b11f09e964a85ba53274b91305, type: 2}
-  ProximityDetectorRadius: 2
+  ProximityDetectorRadius: 10
   ReloadRate: 2
-  LaunchSpeed: 3
+  LaunchSpeed: 9
   FireOffsetRange: 0.25
