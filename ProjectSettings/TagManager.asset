@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FarBG
+    uniqueID: 1534385079
+    locked: 0
+  - name: BG
+    uniqueID: 2170719497
+    locked: 0
+  - name: Player
+    uniqueID: 3920553445
+    locked: 0
+  - name: Entity
+    uniqueID: 1865557607
+    locked: 0
+  - name: Walls
+    uniqueID: 2646674163
+    locked: 0

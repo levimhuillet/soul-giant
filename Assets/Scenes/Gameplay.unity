@@ -133,6 +133,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -263,8 +273,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -761146659
-  m_SortingLayer: 0
+  m_SortingLayerID: -2124247799
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5f85745b854e46440b1fa608f30b902e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -288,6 +298,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -363,6 +383,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -441,8 +471,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -519,6 +559,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -594,6 +644,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -668,6 +728,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -799,9 +869,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -829041397
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1648293133
+  m_SortingLayer: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e725fa710e261384e9f843e3c940a4ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -880,8 +950,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -829041397
-  m_SortingLayer: 0
+  m_SortingLayerID: -1648293133
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e17c67a2ead58e047a6d10ed8f8c6fb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -905,6 +975,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -981,6 +1061,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1055,6 +1145,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -1170,6 +1270,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -1329,6 +1439,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1459,9 +1579,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -761146659
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -2124247799
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5715113e83ed45646a164095e41a44e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1519,8 +1639,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -1596,6 +1726,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -1714,6 +1854,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1788,6 +1938,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -1864,6 +2024,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1938,6 +2108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -2014,6 +2194,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2089,6 +2279,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallChunk (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
+      objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2163,6 +2363,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
@@ -2441,6 +2651,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallChunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785625330647956462, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1648293133
       objectReference: {fileID: 0}
     - target: {fileID: 6785625330647956463, guid: 76105d6d0d151a84c9c4b178fbb9fe1f,
         type: 3}
