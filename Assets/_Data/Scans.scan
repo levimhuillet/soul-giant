@@ -9,3 +9,23 @@ This is a test of the scan system.
 :: Neuron.Lungs
 @header Lungs
 ...hard... to breath... spores...
+
+:: Worm
+@header Striated Worm
+Passive creature. Secretes corrosive slime.
+
+:: Moss
+@header Crimson Moss
+Stationary lifeform. Covered in poisonous spores.
+
+:: SporeSquid
+@header Spore Squid
+Emits toxic spores. Proceed with caution.
+
+:: Toofshroom
+@header Toofshroom
+Carnivorous fungus. Avoid.
+
+:: AcidArm
+@header Acid Arm
+Passive lifeform. Avoid direct contact.
