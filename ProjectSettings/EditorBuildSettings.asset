@@ -12,9 +12,30 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 74aff9731d953de4799c3480934b37f9
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
-    guid: 2e65da56df247f9428712d6715899183
+    path: Assets/Scenes/Regions/Leg.unity
+    guid: a8f2e1117c3467b4eb8a8747533c57ad
+  - enabled: 1
+    path: Assets/Scenes/Regions/Leg_1.5.unity
+    guid: 98b1dd34f0d077a4ab7253759276a145
+  - enabled: 1
+    path: Assets/Scenes/Regions/Hub.unity
+    guid: 78bf37780228b9140a51cd0ed61e7e4b
+  - enabled: 1
+    path: Assets/Scenes/Regions/Stomach.unity
+    guid: 0740bdf187efa104580477dc27276a21
+  - enabled: 1
+    path: Assets/Scenes/Regions/Lungs.unity
+    guid: eb7cccc7428f6ab4f95ea2b36dadf459
+  - enabled: 1
+    path: Assets/Scenes/Regions/Heart.unity
+    guid: 3942e81485c81b54fbb9b4f784cef882
+  - enabled: 1
+    path: Assets/Scenes/Regions/Brain.unity
+    guid: a233681070a7909429c0ab2a4e208f91
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 452376bb7d2210d46b9357453ba5e2c8
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: 2e65da56df247f9428712d6715899183
   m_configObjects: {}

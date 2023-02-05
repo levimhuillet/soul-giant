@@ -16,6 +16,8 @@ namespace SoulGiant {
         private float m_Speed;
         private Vector3 m_TravelDir;
 
+        private SpriteRenderer m_SR;
+
         private enum State
         {
             Init,
@@ -62,9 +64,13 @@ namespace SoulGiant {
         #region External
 
         public void Init(TempAlloc<Projectile> alloc, ProjectileData pData, float speed, Vector3 travelDir) {
+            m_SR = this.GetComponent<SpriteRenderer>();
+
             m_TempAlloc = alloc;
             m_InitData = pData;
-            // TODO: apply pData (sprite, etc.)
+            if (m_SR != null) {
+                m_SR.sprite = pData.BodySprite;
+            }
 
             m_state = State.Init;
             m_Speed = speed;

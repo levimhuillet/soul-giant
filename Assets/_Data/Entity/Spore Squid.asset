@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteAnimations:
   - {fileID: 11400000, guid: e9f520aee5d7d184aae07fdbe9bc4422, type: 2}
-  ProjectileData: {fileID: 11400000, guid: 6d7831b11f09e964a85ba53274b91305, type: 2}
+  LaunchesProjectile: 1
+  ProjectileData: {fileID: 11400000, guid: d4c4509ad0d8dec45bcd05314f04fdf8, type: 2}
   ProximityDetectorRadius: 10
   ReloadRate: 2
   LaunchSpeed: 6

@@ -7,7 +7,7 @@ namespace SoulGiant {
     [CreateAssetMenu (fileName = "NewProjectileData", menuName = "SoulGiant/ProjectileData")]
     public class ProjectileData : ScriptableObject
     {
-        [SerializeField] private Sprite m_BodySprite;
+        public Sprite BodySprite;
     }
 }
 

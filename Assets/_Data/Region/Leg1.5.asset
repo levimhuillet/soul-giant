@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f808080aa22b56408d131658e09ca6c, type: 3}
-  m_Name: Projectile1-TEMP
+  m_Script: {fileID: 11500000, guid: bbd6cc9c0d912a642b66edb514e9f43b, type: 3}
+  m_Name: Leg1.5
   m_EditorClassIdentifier: 
-  BodySprite: {fileID: 21300000, guid: 4cda746159961b549aec7f2792e3e8a5, type: 3}
+  MusicTrack: {fileID: 0}

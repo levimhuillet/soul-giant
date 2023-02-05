@@ -9,6 +9,7 @@ namespace SoulGiant
     public class MainMenu : MonoBehaviour
     {
         [SerializeField] private Button m_NewGameButton;
+        [SerializeField] private string m_FirstLevel;
 
         private void Awake() {
             m_NewGameButton.onClick.AddListener(HandleNewGameClicked);
@@ -18,7 +19,7 @@ namespace SoulGiant
 
         private void HandleNewGameClicked() {
             // Start new game
-            SceneManager.LoadScene("Gameplay");
+            SceneManager.LoadScene(m_FirstLevel);
         }
 
         #endregion // Handlers

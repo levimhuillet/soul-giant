@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e09ade63fea79e40a5a9695871e01af, type: 3}
-  m_Name: Acid Slime
+  m_Name: StriatedWorm
   m_EditorClassIdentifier: 
   SpriteAnimations:
-  - {fileID: 11400000, guid: 8ebb7e01503d08846b9663f696a6f7d6, type: 2}
-  LaunchesProjectile: 1
-  ProjectileData: {fileID: 11400000, guid: 2adbbf660465cc948901a9e53aa5b266, type: 2}
+  - {fileID: 11400000, guid: aff74a599212b3b4a804dc330b476d50, type: 2}
+  LaunchesProjectile: 0
+  ProjectileData: {fileID: 0}
   ProximityDetectorRadius: 10
-  ReloadRate: 2
-  LaunchSpeed: 5
-  FireOffsetRange: 0.25
+  ReloadRate: 0
+  LaunchSpeed: 0
+  FireOffsetRange: 0
