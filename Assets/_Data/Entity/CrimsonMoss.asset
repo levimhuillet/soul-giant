@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e09ade63fea79e40a5a9695871e01af, type: 3}
-  m_Name: StriatedWorm
+  m_Name: CrimsonMoss
   m_EditorClassIdentifier: 
   SpriteAnimations:
-  - {fileID: 11400000, guid: aff74a599212b3b4a804dc330b476d50, type: 2}
-  LaunchesProjectile: 1
-  ProjectileData: {fileID: 11400000, guid: 6d7831b11f09e964a85ba53274b91305, type: 2}
+  - {fileID: 11400000, guid: 87c057f567709fd43849d1a785ec5b3e, type: 2}
+  LaunchesProjectile: 0
+  ProjectileData: {fileID: 0}
   ProximityDetectorRadius: 10
-  ReloadRate: 2
-  LaunchSpeed: 6
-  FireOffsetRange: 0.25
+  ReloadRate: 0
+  LaunchSpeed: 0
+  FireOffsetRange: 0
