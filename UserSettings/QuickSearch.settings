@@ -16,7 +16,7 @@ filters = {
 	asset = true
 }
 scopes = {
-	"last_search.AB59B443" = "Leg"
+	"last_search.AB59B443" = "Lung"
 }
 providers = {
 	asset = {

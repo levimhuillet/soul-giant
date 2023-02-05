@@ -8,13 +8,19 @@ namespace SoulGiant {
     public class WallGen : MonoBehaviour {
         [SerializeField] private GameObject[] m_WallPrefabs;
         [SerializeField] private float m_Spacing = 4;
+        [SerializeField] private Vector2 m_RandomDeviation = new Vector2(0.1f, 0.1f);
 
         #if UNITY_EDITOR
 
         private void Generate() {
-            foreach(Transform child in transform) {
+            Transform[] children = new Transform[transform.childCount];
+            for(int i = 0; i < children.Length; i++) {
+                children[i] = transform.GetChild(i);
+            }
+            foreach(var child in children) {
                 DestroyImmediate(child.gameObject);
             }
+
             var edgeCollider = GetComponent<EdgeCollider2D>();
             Vector2[] points = edgeCollider.points;
             for(int i = 0; i < points.Length - 1; i++) {
@@ -23,7 +29,8 @@ namespace SoulGiant {
 
                 int count = Mathf.CeilToInt(Vector2.Distance(b, a) / m_Spacing);
                 for(int j = 0; j <= count; j++) {
-                    Vector2 pos = Vector2.Lerp(a, b, (float) (j + RNG.Instance.NextFloat(-0.1f, 0.1f)) / count);
+                    Vector2 pos = Vector2.Lerp(a, b, (float) j / count);
+                    pos += RNG.Instance.NextVector2(-m_RandomDeviation, m_RandomDeviation);
                     Instantiate(RNG.Instance.Choose(m_WallPrefabs), pos, Quaternion.Euler(0, 0, RNG.Instance.NextFloat(360)), transform);
                 }
             }
