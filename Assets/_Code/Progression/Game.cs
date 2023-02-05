@@ -13,6 +13,7 @@ namespace SoulGiant {
         #endregion // Inspector
 
         private readonly EventDispatcher<object> m_EventDispatcher = new EventDispatcher<object>();
+        private readonly GameInput m_Input = new GameInput();
 
         protected override void OnAssigned() {
             Application.targetFrameRate = 60;
@@ -24,6 +25,10 @@ namespace SoulGiant {
 
         static public EventDispatcher<object> Event {
             get { return I.m_EventDispatcher; }
+        }
+
+        static public GameInput Input {
+            get { return I?.m_Input; }
         }
 
         static public KinematicsMgr Kinematics {
