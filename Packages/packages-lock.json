@@ -36,7 +36,7 @@
       "url": "https://package.openupm.com"
     },
     "com.beauprime.beauutil": {
-      "version": "0.8.2",
+      "version": "0.8.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -83,6 +83,13 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.quicksearch": {
+      "version": "2.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

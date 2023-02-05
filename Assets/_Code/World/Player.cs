@@ -57,7 +57,7 @@ namespace SoulGiant {
         }
 
         private void UpdateMovement() {
-            Vector2 input = GetDesiredMovement();
+            Vector2 input = Game.Input.MovementInput();
 
             if (input.x != 0 || input.y != 0) {
                 Vector2 currentVel = m_Kinematics.State.Velocity;
@@ -83,7 +83,7 @@ namespace SoulGiant {
 
         private void UpdateScanning() {
             if (!m_Scanning) {
-                if (Input.GetKeyDown(KeyCode.Space)) {
+                if (Game.Input.InteractPress()) {
                     ContactFilter2D filter = default;
                     Scannable scan;
                     filter.useTriggers = true;
@@ -96,7 +96,7 @@ namespace SoulGiant {
             }
 
             if (m_Scanning) {
-                if (!m_ScanTarget || !IsScanActivated(m_ScanTarget) || !IsScanInRange(m_ScanTarget) || !Input.GetKey(KeyCode.Space)) {
+                if (!m_ScanTarget || !IsScanActivated(m_ScanTarget) || !IsScanInRange(m_ScanTarget) || !Game.Input.InteractDown()) {
                     CancelScan(true, true);
                 } else {
                     m_ScanEffectsRoot.position = m_ScanTarget.transform.position;
@@ -213,23 +213,6 @@ namespace SoulGiant {
             m_SpriteRenderer.sprite = sprite;
             m_Trail.startColor = m_Trail.endColor = outline;
             m_VisualState = state;
-        }
-
-        static private Vector2 GetDesiredMovement() {
-            Vector2 input = default;
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
-                input.x -= 1;
-            }
-            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
-                input.x += 1;
-            }
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
-                input.y += 1;
-            }
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
-                input.y -= 1;
-            }
-            return input.normalized;
         }
     }
 }

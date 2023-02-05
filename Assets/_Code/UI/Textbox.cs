@@ -36,8 +36,11 @@ namespace SoulGiant
             }
         }
 
-        public IEnumerator Display(StringSlice title, StringSlice text) {
+        public IEnumerator Display(StringSlice title, StringSlice text, bool freezeInput = false) {
             Populate(title, text);
+            if (freezeInput) {
+                Game.Input.BlockWorld(this);
+            }
             return m_DisplayRoutine.Replace(this, DisplayRoutine()).Wait();
         }
 
@@ -48,7 +51,7 @@ namespace SoulGiant
         private IEnumerator DisplayRoutine() {
             Show();
             yield return 0.2f;
-            while(!Input.GetKeyDown(KeyCode.Space)) {
+            while(!Game.Input.AdvancePress()) {
                 yield return null;
             }
             Hide();
@@ -90,6 +93,7 @@ namespace SoulGiant
 
         protected override void OnHide(bool instant) {
             m_DisplayRoutine.Stop();
+            Game.Input.UnblockWorld(this);
         }
     
         #endregion
