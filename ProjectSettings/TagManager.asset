@@ -56,3 +56,6 @@ TagManager:
   - name: Walls
     uniqueID: 2646674163
     locked: 0
+  - name: Foreground
+    uniqueID: 4222964551
+    locked: 0
