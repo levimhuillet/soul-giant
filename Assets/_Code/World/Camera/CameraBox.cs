@@ -4,11 +4,11 @@ using UnityEngine;
 namespace SoulGiant {
     [RequireComponent(typeof(BoxCollider2D))]
     public sealed class CameraBox : MonoBehaviour {
-        public RectEdges Edges = RectEdges.All;
+        [AutoEnum] public RectEdges Edges = RectEdges.All;
         public BoxCollider2D Collider;
 
         private void OnTriggerEnter2D(Collider2D collider) {
-            if (collider.gameObject.layer != Layers.Layer_Player) {
+            if (collider.gameObject.layer != Layers.Player) {
                 return;
             }
 
@@ -16,7 +16,7 @@ namespace SoulGiant {
         }
 
         private void OnTriggerExit2D(Collider2D collider) {
-            if (collider.gameObject.layer != Layers.Layer_Player) {
+            if (collider.gameObject.layer != Layers.Player) {
                 return;
             }
 

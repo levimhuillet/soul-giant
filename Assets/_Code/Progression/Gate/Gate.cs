@@ -48,9 +48,9 @@ namespace SoulGiant
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            if (collision.gameObject.layer == Layers.Player) {
                 if (!m_Locked) {
-                    SceneManager.LoadScene(m_NextLevel);
+                    Game.LoadScene(m_NextLevel);
                 }
                 else {
                     // TEMP begin sequence (should be on scan)

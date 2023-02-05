@@ -19,6 +19,7 @@ namespace SoulGiant {
         #endregion // Inspector
 
         public bool Enabled = true;
+        public LayerMask Mask = Bits.All32;
 
         private void Awake() {
             Time.fixedDeltaTime = 1f / 60;
@@ -37,7 +38,7 @@ namespace SoulGiant {
             }
 
             BeginTick();
-            Tick(m_Objects, dt);
+            Tick(m_Objects, Mask, dt);
             EndTick();
         }
 
@@ -45,11 +46,13 @@ namespace SoulGiant {
             m_Objects.PushBack(obj);
             obj.Body.simulated = true;
             obj.Body.isKinematic = true;
+            obj.Body.simulated = Bits.Contains(Mask, obj.Body.gameObject.layer);
         }
 
         public void Deregister(KinematicObject obj) {
             m_Objects.FastRemove(obj);
             obj.Body.velocity = default;
+            obj.Body.simulated = true;
         }
 
         #region Tick
@@ -64,32 +67,40 @@ namespace SoulGiant {
             Physics2D.autoSyncTransforms = true;
         }
 
-        static private unsafe void Tick(RingBuffer<KinematicObject> objects, float dt) {
+        static private unsafe void Tick(RingBuffer<KinematicObject> objects, LayerMask mask, float dt) {
             KinematicObject obj;
             int objCount = objects.Count;
             Vector2* offsets = stackalloc Vector2[objCount];
             Vector2* positions = stackalloc Vector2[objCount];
             KinematicConfig2D config;
+            bool simulate;
 
             float invDT = 1f / dt;
 
             for(int i = 0; i < objCount; i++) {
                 obj = objects[i];
-                
-                obj.State.Velocity += obj.AccumulatedForce;
-                obj.AccumulatedForce = default;
+
+                simulate = Bits.Contains(mask, obj.Body.gameObject.layer);
+                if (simulate) {
+                    obj.State.Velocity += obj.AccumulatedForce;
+                    obj.AccumulatedForce = default;
+                }
+
                 obj.ContactBuffer = null;
                 obj.ContactCount = 0;
-                obj.Body.useFullKinematicContacts = true;
+                obj.Body.useFullKinematicContacts = simulate;
+                obj.Body.simulated = simulate;
 
-                config = obj.Config;
-                config.Drag += obj.AdditionalDrag;
+                if (simulate) {
+                    config = obj.Config;
+                    config.Drag += obj.AdditionalDrag;
 
-                offsets[i] = KinematicMath2D.Integrate(ref obj.State, ref config, dt);
-                positions[i] = obj.Body.position + offsets[i];
+                    offsets[i] = KinematicMath2D.Integrate(ref obj.State, ref config, dt);
+                    positions[i] = obj.Body.position + offsets[i];
 
-                obj.Body.velocity = offsets[i] * invDT;
-                SyncPosition(positions[i], obj.Body, obj.Transform);
+                    obj.Body.velocity = offsets[i] * invDT;
+                    SyncPosition(positions[i], obj.Body, obj.Transform);
+                }
             }
 
             bool bRun = Physics2D.Simulate(dt);
@@ -100,7 +111,7 @@ namespace SoulGiant {
             for(int i = 0; i < objCount; i++) {
                 obj = objects[i];
 
-                if (obj.SolidLayerMask == 0) {
+                if (obj.SolidLayerMask == 0 || !obj.Body.simulated) {
                     continue;
                 }
 
@@ -147,8 +158,10 @@ namespace SoulGiant {
 
             for(int i = 0; i < objCount; i++) {
                 obj = objects[i];
-                obj.Body.useFullKinematicContacts = false;
-                SyncPosition(positions[i], obj.Body, obj.Transform);
+                if (obj.Body.simulated) {
+                    obj.Body.useFullKinematicContacts = false;
+                    SyncPosition(positions[i], obj.Body, obj.Transform);
+                }
             }
         }
 

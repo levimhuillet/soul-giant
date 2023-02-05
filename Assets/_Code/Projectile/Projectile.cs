@@ -1,4 +1,6 @@
 ﻿using BeauPools;
+using BeauRoutine;
+using BeauUtil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,13 +49,18 @@ namespace SoulGiant {
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            if (collision.gameObject.layer == Layers.Player) {
+                Player player = Player.Current;
+                player.Damage(new Player.DamageParams() {
+                    Source = transform,
+                    Impulse = m_InitData.PlayerImpulse
+                });
                 // Apply damage (dispatch event)
 
                 // Dispose projectile
                 m_TempAlloc.Dispose();
             }
-            else if (collision.gameObject.layer == LayerMask.NameToLayer("Solid")) {
+            else if (collision.gameObject.layer == Layers.Solid) {
                 // Dispose projectile
                 m_TempAlloc.Dispose();
             }
@@ -70,6 +77,12 @@ namespace SoulGiant {
             m_InitData = pData;
             if (m_SR != null) {
                 m_SR.sprite = pData.BodySprite;
+            }
+
+            if (pData.RotateToDirection) {
+                transform.SetRotation(Vector2.Angle(default(Vector2), travelDir), Axis.Z, Space.Self);
+            } else {
+                transform.SetRotation(0, Axis.Z, Space.Self);
             }
 
             m_state = State.Init;

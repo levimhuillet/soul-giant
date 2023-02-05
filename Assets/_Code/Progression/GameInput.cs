@@ -14,6 +14,14 @@ namespace SoulGiant {
         private readonly HashSet<int> m_BlockingWorldObjects = new HashSet<int>();
         private readonly HashSet<int> m_BlockingAllObjects = new HashSet<int>();
 
+        public bool WorldBlocked() {
+            return m_WorldInputBlock || m_AllInputBlock;
+        }
+
+        public bool AllBlocked() {
+            return m_AllInputBlock;
+        }
+
         public void BlockWorld(Component component) {
             if (m_BlockingWorldObjects.Add(UnityHelper.Id(component))) {
                 m_WorldInputBlock = true;
@@ -22,7 +30,7 @@ namespace SoulGiant {
 
         public void UnblockWorld(Component component) {
             if (m_BlockingWorldObjects.Remove(UnityHelper.Id(component))) {
-                m_WorldInputBlock = m_BlockingWorldObjects.Count == 0;
+                m_WorldInputBlock = m_BlockingWorldObjects.Count > 0;
             }
         }
 
@@ -34,7 +42,7 @@ namespace SoulGiant {
 
         public void UnblockAll(Component component) {
             if (m_BlockingAllObjects.Remove(UnityHelper.Id(component))) {
-                m_AllInputBlock = m_BlockingAllObjects.Count == 0;
+                m_AllInputBlock = m_BlockingAllObjects.Count > 0;
             }
         }
 
