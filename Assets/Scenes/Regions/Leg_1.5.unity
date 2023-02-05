@@ -10641,7 +10641,7 @@ PrefabInstance:
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
       propertyPath: m_NextLevel
-      value: Hub
+      value: Stomach
       objectReference: {fileID: 0}
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
