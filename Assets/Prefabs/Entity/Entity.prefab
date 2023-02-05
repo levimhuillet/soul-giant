@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3476706356535570891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.16, y: 1.46, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 297532814260618049}
   - {fileID: 5655954194698565077}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InitData: {fileID: 11400000, guid: bd10d65ed47ac1a4d89070329adf2b86, type: 2}
-  m_BodySpriteSR: {fileID: 8664390947455143472}
+  m_Animator: {fileID: 1313833049145619198}
   m_ProximityDetector: {fileID: 7707719482945887033}
 --- !u!1 &7635841379597562904
 GameObject:
@@ -95,7 +95,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 10
 --- !u!114 &7707719482945887033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 297532814260618049}
   - component: {fileID: 8664390947455143472}
+  - component: {fileID: 1313833049145619198}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -190,3 +191,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1313833049145619198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835616738097694004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696978ae1588e3f4caf739749dbbd9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WorldRenderer: {fileID: 8664390947455143472}
+  m_ImageRenderer: {fileID: 0}
+  m_Animation: {fileID: 0}
+  m_TimeScale: 1
+  m_SyncPivot: 0

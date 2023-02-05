@@ -1,8 +1,10 @@
 ﻿using BeauPools;
 using BeauUtil;
+using SoulGiant.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.WSA;
 
@@ -12,11 +14,13 @@ namespace SoulGiant
     public class Entity : MonoBehaviour
     {
         [SerializeField] private EntityData m_InitData;
-        [SerializeField] private SpriteRenderer m_BodySpriteSR;
+        [SerializeField] private SpriteAnimator m_Animator;
         [SerializeField] private ProximityDetector m_ProximityDetector;
 
         private bool m_TrackingPlayer;
         private GameObject m_TargetObj;
+
+        [SerializeField] private bool m_LaunchesProjectile;
 
         private enum FiringState
         {
@@ -32,9 +36,11 @@ namespace SoulGiant
         private void OnEnable() {
             InitData();
 
-            m_FiringState = FiringState.Armed;
-            m_TrackingPlayer = false;
-            m_TargetObj = null;
+            if (m_LaunchesProjectile) {
+                m_FiringState = FiringState.Armed;
+                m_TrackingPlayer = false;
+                m_TargetObj = null;
+            }
         }
 
         private void OnDisable() {
@@ -42,18 +48,20 @@ namespace SoulGiant
         }
 
         private void Update() {
-            switch (m_FiringState) {
-                case FiringState.Reloading:
-                    Reload();
-                    break;
-                case FiringState.Armed:
-                    if (m_TrackingPlayer) {
-                        LaunchProjectile();
-                    }
-                    break;
-                default:
-                    break;
+            if (m_LaunchesProjectile) {
+                switch (m_FiringState) {
+                    case FiringState.Reloading:
+                        Reload();
+                        break;
+                    case FiringState.Armed:
+                        if (m_TrackingPlayer) {
+                            LaunchProjectile();
+                        }
+                        break;
+                    default:
+                        break;
 
+                }
             }
         }
 
@@ -71,9 +79,13 @@ namespace SoulGiant
 
         private void InitData() {
             // apply data from scriptable object
+            m_LaunchesProjectile = m_InitData.LaunchesProjectile;
 
-            // apply sprite
-            m_BodySpriteSR.sprite = m_InitData.BodySprite;
+            // apply sprite animation
+            if (m_InitData.SpriteAnimations.Length > 0) {
+                m_Animator.Animation = m_InitData.SpriteAnimations[0];
+                m_Animator.Play(m_InitData.SpriteAnimations[0], true);
+            }
 
             // apply proximity detector
             m_ProximityDetector.Collider.radius = m_InitData.ProximityDetectorRadius;
@@ -98,7 +110,6 @@ namespace SoulGiant
         private void LaunchProjectile() {
             if (m_InitData.ReloadRate != 0) {
                 // Fire projectile w/ aim offset
-                Debug.Log("[Entity] Launching projectile!");
 
                 // (TODO: launch from launching pos)
                 Vector2 projectileStartPos = this.transform.position;
