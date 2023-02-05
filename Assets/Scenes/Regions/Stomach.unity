@@ -16101,7 +16101,7 @@ PrefabInstance:
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
       propertyPath: m_NextLevel
-      value: Hub
+      value: Lungs
       objectReference: {fileID: 0}
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
@@ -17521,6 +17521,101 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &766233082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4923721556757392273, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: AdditionalImage
+      value: 
+      objectReference: {fileID: 21300000, guid: b15791686736b24479ec31ea60db63ca,
+        type: 3}
+    - target: {fileID: 4923721556757392273, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: ScanId.m_Source
+      value: Neuron.Stomach
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923721556757392273, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: ScanId.m_HashValue
+      value: 3727425185
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7911192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.61166203
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941172, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 75.420006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212129019679941173, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Neuron
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370133053093417183, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370133053093417183, guid: 20c97be849bed9847949626741a6f6d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20c97be849bed9847949626741a6f6d5, type: 3}
 --- !u!1 &772244590
 GameObject:
   m_ObjectHideFlags: 0
@@ -23255,7 +23350,7 @@ MonoBehaviour:
   m_Mode: 1
   m_Scale: 1
   m_PixelHeight: 240
-  m_PixelsPerUnit: 0
+  m_PixelsPerUnit: 16
   m_FilterMode: 0
 --- !u!114 &1140475414
 MonoBehaviour:

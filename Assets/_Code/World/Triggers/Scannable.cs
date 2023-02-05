@@ -12,6 +12,7 @@ namespace SoulGiant {
 
         public SerializedHash32 ScanId;
         public Collider2D Collider;
+        public Sprite AdditionalImage;
 
         #endregion // Inspector
 

@@ -94,6 +94,7 @@ namespace SoulGiant
         protected override void OnHide(bool instant) {
             m_DisplayRoutine.Stop();
             Game.Input.UnblockWorld(this);
+            Game.Image.Clear();
         }
     
         #endregion

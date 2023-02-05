@@ -10,6 +10,8 @@ namespace SoulGiant {
         public Sprite BodySprite;
         public bool RotateToDirection;
         public float PlayerImpulse;
+        public float Duration;
+        public float Gravity;
     }
 }
 

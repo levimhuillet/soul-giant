@@ -14,9 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteAnimations:
   - {fileID: 11400000, guid: e9f520aee5d7d184aae07fdbe9bc4422, type: 2}
+  ProximityDetectorRadius: 10
   LaunchesProjectile: 1
   ProjectileData: {fileID: 11400000, guid: d4c4509ad0d8dec45bcd05314f04fdf8, type: 2}
-  ProximityDetectorRadius: 10
+  ProjectileAim: 1
+  FixedProjectileAnim: {x: 0, y: 0}
+  ProjectileOffset: {x: -0.1, y: 1}
   ReloadRate: 2
   LaunchSpeed: 6
+  LaunchSpeedRange: 0
+  FirePositionRange: 0
   FireOffsetRange: 0.25
+  ProjectileCount: 8
+  ProjectileSpreadType: 0
+  ProjectileCone: 360

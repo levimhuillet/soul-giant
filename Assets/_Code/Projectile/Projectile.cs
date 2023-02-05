@@ -15,8 +15,8 @@ namespace SoulGiant {
 
         private TempAlloc<Projectile> m_TempAlloc;
 
-        private float m_Speed;
-        private Vector3 m_TravelDir;
+        private Vector3 m_Velocity;
+        private float m_Decay;
 
         private SpriteRenderer m_SR;
 
@@ -39,7 +39,16 @@ namespace SoulGiant {
                 case State.Launching:
                     break;
                 case State.Traveling:
-                    this.transform.Translate(m_TravelDir * m_Speed * Time.deltaTime, Space.World);
+                    this.transform.Translate(m_Velocity * Time.deltaTime, Space.World);
+                    if (m_InitData.Gravity != 0) {
+                        m_Velocity.y -= Time.deltaTime * m_InitData.Gravity;
+                    }
+                    if (m_Decay > 0) {
+                        m_Decay -= Time.deltaTime;
+                        if (m_Decay <= 0) {
+                            m_TempAlloc.Dispose();
+                        }
+                    }
                     break;
                 case State.Impacting:
                     break;
@@ -78,16 +87,16 @@ namespace SoulGiant {
             if (m_SR != null) {
                 m_SR.sprite = pData.BodySprite;
             }
+            m_Decay = pData.Duration;
 
             if (pData.RotateToDirection) {
-                transform.SetRotation(Vector2.Angle(default(Vector2), travelDir), Axis.Z, Space.Self);
+                transform.SetRotation(Vector2.Angle(Vector2.right, travelDir), Axis.Z, Space.Self);
             } else {
                 transform.SetRotation(0, Axis.Z, Space.Self);
             }
 
             m_state = State.Init;
-            m_Speed = speed;
-            m_TravelDir = travelDir;
+            m_Velocity = travelDir * speed;
         }
 
         public void Launch() {

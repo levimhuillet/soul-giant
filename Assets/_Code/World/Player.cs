@@ -217,7 +217,10 @@ namespace SoulGiant {
             
             yield return null;
 
-            Game.Textbox.Display(m_ScanTarget.ScanData.Header, m_ScanTarget.ScanData.Description);
+            Game.Textbox.Display(m_ScanTarget.ScanData.Header, m_ScanTarget.ScanData.Description, m_ScanTarget.AdditionalImage);
+            if (m_ScanTarget.AdditionalImage) {
+                Game.Image.Display(m_ScanTarget.AdditionalImage);
+            }
 
             m_ScanTarget.Scanned = true;
             m_ScanTarget.OnScanned.Invoke(m_ScanTarget);

@@ -65,5 +65,9 @@ namespace SoulGiant {
         static public Textbox Textbox {
             get { return I?.m_Textbox; }
         }
+
+        static public ImageDisplay Image {
+            get { return I?.m_ImageDisplay; }
+        }
     }
 }

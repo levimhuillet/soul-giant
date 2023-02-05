@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Spore
   m_EditorClassIdentifier: 
   BodySprite: {fileID: 21300000, guid: 95ec0f69db73d914497fc9a4dea5c079, type: 3}
+  RotateToDirection: 1
+  PlayerImpulse: 1
+  Duration: 5
+  Gravity: 3
