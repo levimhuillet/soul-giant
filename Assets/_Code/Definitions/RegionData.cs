@@ -7,6 +7,6 @@ namespace SoulGiant
     [CreateAssetMenu(fileName = "NewRegionData", menuName = "SoulGiant/RegionData")]
     public class RegionData : ScriptableObject
     {
-        public AudioClip MusicTrack;
+        public string MusicID;
     }
 }

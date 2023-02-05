@@ -14,7 +14,7 @@ namespace SoulGiant {
         #region Helpers 
 
         private void ApplyData() {
-            // Play m_RegionData.MusicTrack
+            AudioMgr.Instance.PlayAudio(m_RegionData.MusicID, true);
         }
 
         #endregion // Helpers

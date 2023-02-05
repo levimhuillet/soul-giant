@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbd6cc9c0d912a642b66edb514e9f43b, type: 3}
-  m_Name: Heart
+  m_Script: {fileID: 11500000, guid: 1752c88f947ab6b4e928d9ae29f54988, type: 3}
+  m_Name: Lungs
   m_EditorClassIdentifier: 
-  MusicID: heart
+  m_id: lungs
+  m_clip: {fileID: 8300000, guid: c0572378678d6bb409b6e3799953f165, type: 3}
+  m_volume: 1
+  m_pan: 0

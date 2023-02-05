@@ -28365,6 +28365,47 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d57d6abc80b7d4f4e83b9974b3a178f9,
+        type: 2}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 74b64281bce0955429d5c16041b379ff,
+        type: 2}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: a94e6702e46fa93419e82c0e21088c2a,
+        type: 2}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53b5a6e698da02742be41bbc9fcc2638,
+        type: 2}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f7a5fbdee619e04a8a668cbca5859cd,
+        type: 2}
+    - target: {fileID: 7527541896977246232, guid: 024586b6398061640a2d295e4ebabb22,
+        type: 3}
+      propertyPath: m_audioData.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: c22f974312bcb9349b14a563a33491ec,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 024586b6398061640a2d295e4ebabb22, type: 3}
 --- !u!1 &1525101018

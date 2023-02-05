@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd6cc9c0d912a642b66edb514e9f43b, type: 3}
   m_Name: Leg1.5
   m_EditorClassIdentifier: 
-  MusicTrack: {fileID: 0}
+  MusicID: leg
