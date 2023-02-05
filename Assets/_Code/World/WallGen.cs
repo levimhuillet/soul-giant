@@ -8,30 +8,37 @@ namespace SoulGiant {
     public class WallGen : MonoBehaviour {
         [SerializeField] private GameObject[] m_WallPrefabs;
         [SerializeField] private float m_Spacing = 4;
-        [SerializeField] private Vector2 m_RandomDeviation = new Vector2(0.1f, 0.1f);
+        [SerializeField] private Vector2 m_RandomPosition = new Vector2(0.1f, 0.1f);
+        [SerializeField] private float m_RandomScale = 0;
 
         #if UNITY_EDITOR
 
         private void Generate() {
-            Transform[] children = new Transform[transform.childCount];
-            for(int i = 0; i < children.Length; i++) {
-                children[i] = transform.GetChild(i);
-            }
-            foreach(var child in children) {
-                DestroyImmediate(child.gameObject);
+            int childCount = transform.childCount;
+            while(childCount > 0) {
+                DestroyImmediate(transform.GetChild(0).gameObject);
+                childCount--;
             }
 
             var edgeCollider = GetComponent<EdgeCollider2D>();
             Vector2[] points = edgeCollider.points;
+            if (points.Length <= 1) {
+                return;
+            }
+
             for(int i = 0; i < points.Length - 1; i++) {
                 Vector2 a = points[i];
                 Vector2 b = points[i + 1];
 
                 int count = Mathf.CeilToInt(Vector2.Distance(b, a) / m_Spacing);
-                for(int j = 0; j <= count; j++) {
-                    Vector2 pos = Vector2.Lerp(a, b, (float) j / count);
-                    pos += RNG.Instance.NextVector2(-m_RandomDeviation, m_RandomDeviation);
-                    Instantiate(RNG.Instance.Choose(m_WallPrefabs), pos, Quaternion.Euler(0, 0, RNG.Instance.NextFloat(360)), transform);
+                if (count > 0) {
+                    for(int j = 0; j <= count; j++) {
+                        Vector2 pos = Vector2.Lerp(a, b, (float) j / count);
+                        pos += RNG.Instance.NextVector2(-m_RandomPosition, m_RandomPosition);
+                        float scale = 1 + RNG.Instance.NextFloat(-m_RandomScale, m_RandomScale);
+                        GameObject wall = Instantiate(RNG.Instance.Choose(m_WallPrefabs), pos, Quaternion.Euler(0, 0, RNG.Instance.NextFloat(360)), transform);
+                        wall.transform.localScale = new Vector3(scale, scale, 1);
+                    }
                 }
             }
         }
@@ -40,7 +47,7 @@ namespace SoulGiant {
 
         private void Awake() {
             if (Application.isPlaying) {
-                Destroy(gameObject);
+                Destroy(this);
             }
         }
 

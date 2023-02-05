@@ -111,16 +111,44 @@ namespace SoulGiant
             if (m_InitData.ReloadRate != 0) {
                 // Fire projectile w/ aim offset
 
-                // (TODO: launch from launching pos)
-                Vector2 projectileStartPos = this.transform.position;
+                Vector2 startPos = (Vector2) this.transform.position + m_InitData.ProjectileOffset;
+                float launchDirDeg;
+                if (m_InitData.ProjectileAim == EntityData.AimType.Direct) {
+                    launchDirDeg = Vector2.Angle(new Vector2(1, 0), ((Vector2)m_TargetObj.transform.position - startPos));
+                } else {
+                    launchDirDeg = Vector2.Angle(new Vector2(1, 0), m_InitData.FixedProjectileAnim);
+                }
 
-                // calculate direction vector
-                Vector2 launchDir = ((Vector2)m_TargetObj.transform.position - projectileStartPos).normalized;
+                float spreadStart = launchDirDeg - m_InitData.ProjectileCone / 2;
+                float deviationPerBullet = 0;
+                if (m_InitData.ProjectileCount > 1) {
+                    deviationPerBullet = m_InitData.ProjectileCone;
+                    if (m_InitData.ProjectileCone >= 360) {
+                        deviationPerBullet /= m_InitData.ProjectileCount;
+                    } else {
+                        deviationPerBullet /= m_InitData.ProjectileCount - 1;
+                    }
+                }
 
-                Projectile projectile = GameMechanics.AllocProjectile(m_InitData.ProjectileData, m_InitData.LaunchSpeed, launchDir);
-                projectile.transform.parent = this.transform;
-                projectile.transform.position = projectileStartPos;
-                projectile.Launch();
+                for(int i = 0; i < m_InitData.ProjectileCount; i++) {
+                    Vector2 projectilePos = startPos + RNG.Instance.NextVector2(0, m_InitData.FirePositionRange);
+                    float direction;
+                    if (m_InitData.ProjectileSpreadType == EntityData.SpreadType.Cluster) {
+                        direction = launchDirDeg + RNG.Instance.NextFloat(-m_InitData.ProjectileCone, m_InitData.ProjectileCone) / 2;
+                    } else {
+                        direction = spreadStart + deviationPerBullet * i;
+                    }
+
+                    direction += RNG.Instance.NextFloat(-m_InitData.FireOffsetRange, m_InitData.FireOffsetRange);
+
+                    float launchSpeed = m_InitData.LaunchSpeed + RNG.Instance.NextFloat(m_InitData.LaunchSpeedRange);
+
+                    Projectile projectile = GameMechanics.AllocProjectile(m_InitData.ProjectileData, launchSpeed, Geom.Normalized(direction * Mathf.Deg2Rad));
+                    projectile.transform.parent = this.transform;
+                    projectile.transform.position = startPos;
+                    projectile.Launch();
+                }
+
 
                 // Reload
                 m_FiringState = FiringState.Reloading;

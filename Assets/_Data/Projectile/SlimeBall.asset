@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: SlimeBall
   m_EditorClassIdentifier: 
   BodySprite: {fileID: 21300000, guid: a05aaa3eeb1914a4aa57f1ebbdb17399, type: 3}
+  RotateToDirection: 0
+  PlayerImpulse: 1
+  Duration: 0
+  Gravity: 0

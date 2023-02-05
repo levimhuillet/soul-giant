@@ -48,19 +48,16 @@ namespace SoulGiant
 
         protected override IEnumerator TransitionToShow() {
             Root.gameObject.SetActive(true);
-            Root.anchoredPosition = new Vector2(0, 16);
             CanvasGroup.alpha = 0;
             yield return Routine.Combine(
-                Root.AnchorPosTo(0, 0.2f, Axis.Y).Ease(Curve.BackOut),
-                CanvasGroup.FadeTo(1, 0.2f)
+                CanvasGroup.FadeTo(1, 0.5f)
             );
         }
 
         protected override IEnumerator TransitionToHide() {
             if (Root.gameObject.activeSelf) {
                 yield return Routine.Combine(
-                    Root.AnchorPosTo(16, 0.2f, Axis.Y).Ease(Curve.CubeOut),
-                    CanvasGroup.FadeTo(0, 0.2f)
+                    CanvasGroup.FadeTo(0, 0.5f)
                 );
                 Root.gameObject.SetActive(false);
             }

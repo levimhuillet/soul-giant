@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b72aa0de2319c741866f53fe8a43ac1, type: 3}
+  m_Name: Ending
+  m_EditorClassIdentifier: 
+  Frames:
+  - Image: {fileID: 21300000, guid: 61790cb836c0eaf41bcc99cead5f44b5, type: 3}
+    Text: I remember now.
+    Delay: 2
+  - Image: {fileID: 21300000, guid: c0f10acbe6dca2346bf266d3cfbe3c3f, type: 3}
+    Text: The tiny ones came eons ago.
+    Delay: 2
+  - Image: {fileID: 21300000, guid: 957bff85e562013408c7db7458149fd8, type: 3}
+    Text: They took too much... and nearly destroyed me.
+    Delay: 2
+  - Image: {fileID: 21300000, guid: 7f7c23956a994584bb9dc93b3538476e, type: 3}
+    Text: But now they are gone.
+    Delay: 2
+  - Image: {fileID: 21300000, guid: 17740d542b05a2b4999092a46da12547, type: 3}
+    Text: And I am free.
+    Delay: 2
