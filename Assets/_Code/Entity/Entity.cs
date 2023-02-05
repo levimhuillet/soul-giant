@@ -1,8 +1,10 @@
 ﻿using BeauPools;
 using BeauUtil;
+using SoulGiant.Animation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.WSA;
 
@@ -12,7 +14,7 @@ namespace SoulGiant
     public class Entity : MonoBehaviour
     {
         [SerializeField] private EntityData m_InitData;
-        [SerializeField] private SpriteRenderer m_BodySpriteSR;
+        [SerializeField] private SpriteAnimator m_Animator;
         [SerializeField] private ProximityDetector m_ProximityDetector;
 
         private bool m_TrackingPlayer;
@@ -72,8 +74,11 @@ namespace SoulGiant
         private void InitData() {
             // apply data from scriptable object
 
-            // apply sprite
-            m_BodySpriteSR.sprite = m_InitData.BodySprite;
+            // apply sprite animation
+            if (m_InitData.SpriteAnimations.Length > 0) {
+                m_Animator.Animation = m_InitData.SpriteAnimations[0];
+                m_Animator.Play(m_InitData.SpriteAnimations[0], true);
+            }
 
             // apply proximity detector
             m_ProximityDetector.Collider.radius = m_InitData.ProximityDetectorRadius;
@@ -93,6 +98,7 @@ namespace SoulGiant
             if (m_ReloadTimer <= 0) {
                 m_FiringState = FiringState.Armed;
             }
+            Debug.Log("[Animation] animating... " + m_Animator.IsPlaying());
         }
 
         private void LaunchProjectile() {

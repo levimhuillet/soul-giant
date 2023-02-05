@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5300c255531c14cb70b27694833b8e, type: 3}
+  m_Name: Toofshroom_Idle
+  m_EditorClassIdentifier: 
+  m_Frames:
+  - Sprite: {fileID: 21300000, guid: 22f5e609a609f694a83048f5582c4629, type: 3}
+    AudioEvent: 
+    ExtraEvents: 
+  - Sprite: {fileID: 21300000, guid: d95bab0425146c24bb71c099eb6e50f8, type: 3}
+    AudioEvent: 
+    ExtraEvents: 
+  - Sprite: {fileID: 21300000, guid: 25c6fe09a3a5db343aed7327e27c4d87, type: 3}
+    AudioEvent: 
+    ExtraEvents: 
+  m_FrameRate: 4
+  m_PlaybackMode: 2
+  m_NextAnimations: []

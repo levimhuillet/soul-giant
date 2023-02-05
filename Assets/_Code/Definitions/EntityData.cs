@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SoulGiant.Animation;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static SoulGiant.Entity;
@@ -7,9 +8,9 @@ namespace SoulGiant {
     [CreateAssetMenu(fileName = "NewEntityData", menuName = "SoulGiant/EntityData")]
     public class EntityData : ScriptableObject
     {
-        public Sprite BodySprite;
+        public SpriteAnimation[] SpriteAnimations;
         public ProjectileData ProjectileData;
-        public float ProximityDetectorRadius = 2;
+        public float ProximityDetectorRadius = 10;
 
         public float ReloadRate;
         public float LaunchSpeed;
