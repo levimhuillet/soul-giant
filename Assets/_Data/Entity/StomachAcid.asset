@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e09ade63fea79e40a5a9695871e01af, type: 3}
-  m_Name: Acid Arm
+  m_Name: StomachAcid
   m_EditorClassIdentifier: 
   SpriteAnimations:
-  - {fileID: 11400000, guid: fd552903270c3a84a9b2eadc3952aae9, type: 2}
+  - {fileID: 11400000, guid: bb25368a6ee00bb48972b1fd2069ab2d, type: 2}
   LaunchesProjectile: 0
   ProjectileData: {fileID: 0}
-  ProximityDetectorRadius: 0.1
+  ProximityDetectorRadius: 10
   ReloadRate: 0
   LaunchSpeed: 0
   FireOffsetRange: 0

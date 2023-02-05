@@ -9,6 +9,7 @@ namespace SoulGiant {
     public class EntityData : ScriptableObject
     {
         public SpriteAnimation[] SpriteAnimations;
+        public bool LaunchesProjectile = true;
         public ProjectileData ProjectileData;
         public float ProximityDetectorRadius = 10;
 

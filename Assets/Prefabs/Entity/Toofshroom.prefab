@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772340416768186058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.17, y: -1.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6212129019679941172}
@@ -208,3 +208,4 @@ MonoBehaviour:
   m_InitData: {fileID: 11400000, guid: 65ae0c38e670d2844adf49293afd9453, type: 2}
   m_Animator: {fileID: 8372746267707580672}
   m_ProximityDetector: {fileID: 935911326345513159}
+  m_LaunchesProjectile: 0
