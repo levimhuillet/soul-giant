@@ -67,6 +67,13 @@ namespace SoulGiant
 
         private void OnTriggerEnter2D(Collider2D collision) {
             // TODO: check if collision is player
+            if (collision.gameObject.layer == Layers.Player) {
+                Player player = Player.Current;
+                player.Damage(new Player.DamageParams() {
+                    Source = transform,
+                    Impulse = 0
+                });
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
@@ -88,15 +95,19 @@ namespace SoulGiant
             }
 
             // apply proximity detector
-            m_ProximityDetector.Collider.radius = m_InitData.ProximityDetectorRadius;
+            if (m_ProximityDetector != null) {
+                m_ProximityDetector.Collider.radius = m_InitData.ProximityDetectorRadius;
 
-            m_ProximityDetector.PlayerEntered += HandlePlayerEnterProximity;
-            m_ProximityDetector.PlayerExited += HandlePlayerExitProximity;
+                m_ProximityDetector.PlayerEntered += HandlePlayerEnterProximity;
+                m_ProximityDetector.PlayerExited += HandlePlayerExitProximity;
+            }
         }
 
         private void UnloadData() {
-            m_ProximityDetector.PlayerEntered -= HandlePlayerEnterProximity;
-            m_ProximityDetector.PlayerExited -= HandlePlayerExitProximity;
+            if (m_ProximityDetector != null) {
+                m_ProximityDetector.PlayerEntered -= HandlePlayerEnterProximity;
+                m_ProximityDetector.PlayerExited -= HandlePlayerExitProximity;
+            }
         }
 
         private void Reload() {

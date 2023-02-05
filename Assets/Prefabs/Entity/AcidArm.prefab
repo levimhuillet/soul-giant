@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5619309794661965189}
   - component: {fileID: 4053565362146412081}
+  - component: {fileID: 2733650874800694097}
   m_Layer: 0
   m_Name: AcidArm
   m_TagString: Untagged
@@ -209,3 +210,29 @@ MonoBehaviour:
   m_Animator: {fileID: 8070413478833692337}
   m_ProximityDetector: {fileID: 1671715582045517686}
   m_LaunchesProjectile: 0
+--- !u!61 &2733650874800694097
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619309794661965188}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19177687, y: -0.05048561}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1413095, y: 3.968544}
+  m_EdgeRadius: 0
