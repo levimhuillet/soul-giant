@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1865557607
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 133a62df060475a449ea354daf9a427e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -208,3 +208,4 @@ MonoBehaviour:
   m_InitData: {fileID: 11400000, guid: 2807d72ff75a1a441987e6d3d7348416, type: 2}
   m_Animator: {fileID: 8070413478833692337}
   m_ProximityDetector: {fileID: 1671715582045517686}
+  m_LaunchesProjectile: 0

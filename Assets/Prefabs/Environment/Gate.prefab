@@ -99,6 +99,11 @@ MonoBehaviour:
   m_StartsUnlocked: 1
   m_UnlockedSprite: {fileID: 21300000, guid: 2de72f43f15eb7b439e8298212b96c1e, type: 3}
   m_LockedSprite: {fileID: 21300000, guid: 5ef30d97ce00de04698963d2b14d755b, type: 3}
+  m_SequenceType: 0
+  m_Lights: []
+  m_LightSequence: []
+  m_FlashTime: 0
+  m_NumLights: 0
 --- !u!60 &8367702617068866133
 PolygonCollider2D:
   m_ObjectHideFlags: 0
