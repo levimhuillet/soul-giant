@@ -6,7 +6,7 @@ using BeauUtil.Debugger;
 using UnityEngine;
 
 namespace SoulGiant {
-    public class Scannable : MonoBehaviour {
+    public class Scannable : Trigger {
 
         #region Inspector
 

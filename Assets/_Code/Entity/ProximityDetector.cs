@@ -26,14 +26,14 @@ namespace SoulGiant
 
         private void OnTriggerEnter2D(Collider2D collision) {
             // check if collision is player
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            if (collision.gameObject.layer == Layers.Player) {
                 PlayerEntered?.Invoke(this, new ProximityEventArgs(collision.gameObject));
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
             // check if collision is player
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            if (collision.gameObject.layer == Layers.Player) {
                 PlayerExited?.Invoke(this, new ProximityEventArgs(collision.gameObject));
             }
         }

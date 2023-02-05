@@ -151,14 +151,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659636947124806982}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a3ee03a5fada3942b82c53c377b7113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 005176cbe6b841246bf892d641e2a9e8, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -216,6 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_KinematicsMgr: {fileID: 1416421095723579380}
   m_Textbox: {fileID: 1759970641}
+  m_ImageDisplay: {fileID: 0}
+  m_Fader: {fileID: 2011434565100891067}
 --- !u!114 &1416421095723579380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enabled: 1
+  Mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &7527541896977246232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +274,8 @@ GameObject:
   - component: {fileID: 1780464413019325838}
   - component: {fileID: 1353072940799264900}
   - component: {fileID: 313315066674920148}
+  - component: {fileID: 2011434565100891067}
+  - component: {fileID: 7185249792263346265}
   m_Layer: 5
   m_Name: FadeCanvas
   m_TagString: Untagged
@@ -303,7 +310,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710024018321544462}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -356,6 +363,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2011434565100891067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710024018321544462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d91f98c56660e4aa0f394a15f67478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Canvas: {fileID: 1780464413019325838}
+  m_Group: {fileID: 7185249792263346265}
+--- !u!225 &7185249792263346265
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710024018321544462}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &811725487349540272
 PrefabInstance:
   m_ObjectHideFlags: 0

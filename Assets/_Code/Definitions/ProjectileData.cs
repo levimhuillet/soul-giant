@@ -8,6 +8,8 @@ namespace SoulGiant {
     public class ProjectileData : ScriptableObject
     {
         public Sprite BodySprite;
+        public bool RotateToDirection;
+        public float PlayerImpulse;
     }
 }
 

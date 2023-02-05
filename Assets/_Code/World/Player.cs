@@ -8,6 +8,22 @@ using UnityEngine;
 namespace SoulGiant {
     public class Player : MonoBehaviour {
 
+        static public readonly StringHash32 Event_Damaged = "player::damaged";
+        static public readonly StringHash32 Event_Death = "player::death";
+        static public readonly StringHash32 Event_Respawn = "player::respawn";
+
+        public struct DamageParams {
+            public Transform Source;
+            public Vector2? Direction;
+            public float Impulse;
+        }
+
+        private enum HealthState {
+            Dead,
+            Hurt,
+            Full
+        }
+
         #region Inspector
 
         [Header("Components")]
@@ -23,6 +39,12 @@ namespace SoulGiant {
         [SerializeField] private Transform m_ScanRotator = null;
         [SerializeField] private ParticleSystem m_ScanParticles = null;
         [SerializeField] private ParticleSystemForceField m_ScanDisperser = null;
+
+        [Header("Hurt")]
+        [SerializeField] private ParticleSystem m_HurtParticles = null;
+        [SerializeField] private float m_HurtDuration = 1;
+        [SerializeField] private float m_RegenDuration = 5;
+        [SerializeField] private ParticleSystem m_RegenParticles = null;
 
         [Header("Sprites")]
         [SerializeField] private Sprite m_NormalSprite = null;
@@ -41,11 +63,27 @@ namespace SoulGiant {
         [NonSerialized] private bool m_Scanning;
         [NonSerialized] private Scannable m_ScanTarget;
         [NonSerialized] private int m_VisualState;
+        [NonSerialized] private HealthState m_HurtState = HealthState.Full;
+        [NonSerialized] private Vector3 m_LastCheckpoint;
         private Routine m_ScanRoutine;
+        private Routine m_HurtFlash;
+        private Routine m_DeathRoutine;
+        [NonSerialized] private float m_HealthRegenTimer;
+        [NonSerialized] private float m_InvulnerabilityTimer;
 
         private void Awake() {
             m_ScanRotator.gameObject.SetActive(false);
             m_ScanParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            s_Current = this;
+        }
+
+        private void Start() {
+            m_LastCheckpoint = transform.position;
+            m_InvulnerabilityTimer = 2;
+        }
+
+        private void OnDestroy() {
+            s_Current = null;
         }
 
         private void FixedUpdate() {
@@ -54,10 +92,33 @@ namespace SoulGiant {
 
         private void LateUpdate() {
             UpdateScanning();
+
+            if (m_HealthRegenTimer > 0) {
+                m_HealthRegenTimer -= Routine.DeltaTime;
+                if (m_HealthRegenTimer <= 0) {
+                    RestoreHealth();
+                }
+            }
+
+            if (m_InvulnerabilityTimer > 0) {
+                m_InvulnerabilityTimer -= Routine.DeltaTime;
+                if (m_InvulnerabilityTimer <= 0) {
+                    m_HurtFlash.Stop();
+                    SetVisible(true);
+                }
+            }
         }
 
         private void UpdateMovement() {
-            Vector2 input = Game.Input.MovementInput();
+            Vector2 input;
+            if (m_HurtState != HealthState.Dead) {
+                input = Game.Input.MovementInput();
+                if (m_HurtState == HealthState.Hurt && m_InvulnerabilityTimer > 0) {
+                    input *= 0.5f;
+                }
+            } else {
+                input = default(Vector2);
+            }
 
             if (input.x != 0 || input.y != 0) {
                 Vector2 currentVel = m_Kinematics.State.Velocity;
@@ -82,6 +143,10 @@ namespace SoulGiant {
         #region Scanning
 
         private void UpdateScanning() {
+            if (m_HurtState == HealthState.Dead) {
+                return;
+            }
+
             if (!m_Scanning) {
                 if (Game.Input.InteractPress()) {
                     ContactFilter2D filter = default;
@@ -156,6 +221,7 @@ namespace SoulGiant {
 
             m_ScanTarget.Scanned = true;
             m_ScanTarget.OnScanned.Invoke(m_ScanTarget);
+            m_ScanTarget.Invoke();
             CancelScan(false, false);
         }
 
@@ -209,10 +275,135 @@ namespace SoulGiant {
 
         #endregion // Scanning
 
+        #region Damage
+
+        public void Damage(DamageParams damage = default(DamageParams)) {
+            if (Game.Input.WorldBlocked() || m_HurtState == HealthState.Dead) {
+                return;
+            }
+
+            if (damage.Impulse > 0) {
+                Vector2 impulse;
+                if (damage.Direction.HasValue) {
+                    impulse = damage.Direction.Value;
+                } else if (damage.Source != null) {
+                    impulse = damage.Source.position - m_Kinematics.Transform.position;
+                } else {
+                    impulse = default(Vector2);
+                }
+
+                if (impulse.sqrMagnitude > 0) {
+                    impulse.Normalize();
+                    impulse *= damage.Impulse;
+                    m_Kinematics.AccumulatedForce += impulse;
+                }
+            }
+
+            m_HealthRegenTimer = m_RegenDuration;
+
+            if (m_InvulnerabilityTimer > 0) {
+                m_InvulnerabilityTimer *= 1.1f;
+                return;
+            }
+
+            CancelScan(false, true);
+
+            switch(m_HurtState) {
+                case HealthState.Full: {
+                    Hurt();
+                    break;
+                }
+
+                case HealthState.Hurt: {
+                    Die();
+                    break;
+                }
+            }
+        }
+
+        public void RestoreHealth() {
+            m_HealthRegenTimer = 0;
+            m_HurtFlash.Stop();
+            SetVisible(true);
+            if (m_HurtState == HealthState.Dead) {
+                m_HurtParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            } else {
+                m_HurtParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                m_RegenParticles.Emit(1);
+            }
+            m_HurtState = HealthState.Full;
+            m_DeathRoutine.Stop();
+            m_InvulnerabilityTimer = 0;
+        }
+
+        private void Hurt() {
+            m_HurtState = HealthState.Hurt;
+            m_HealthRegenTimer = m_RegenDuration;
+            m_InvulnerabilityTimer = m_HurtDuration;
+            m_HurtFlash.Replace(this, HurtFlash());
+            m_HurtParticles.Play();
+            Game.Event.Dispatch(Event_Damaged);
+        }
+
+        public void Die() {
+            if (m_HurtState != HealthState.Dead) {
+                m_HurtParticles.Stop();
+                m_HurtState = HealthState.Dead;
+                m_HealthRegenTimer = 0;
+                m_InvulnerabilityTimer = 0;
+                Game.Event.Dispatch(Event_Death);
+                m_HurtFlash.Replace(this, HurtFlash());
+                m_DeathRoutine.Replace(this, DeathRespawn());
+            }
+        }
+
+        private IEnumerator DeathRespawn() {
+            yield return 1;
+            Game.FadeTransition(Respawn);
+        }
+
+        private void Respawn() {
+            RestoreHealth();
+            transform.position = m_LastCheckpoint;
+            m_Trail.Clear();
+            CameraController.Current.SnapToTarget();
+            Game.Event.Dispatch(Event_Respawn);
+            m_InvulnerabilityTimer = 1;
+            m_HurtFlash.Replace(this, HurtFlash());
+        }
+
+        private IEnumerator HurtFlash() {
+            while(true) {
+                SetVisible(false);
+                int frames = 4;
+                while(frames-- > 0) {
+                    yield return null;
+                }
+                SetVisible(true);
+                frames = 4;
+                while(frames-- > 0) {
+                    yield return null;
+                }
+            }
+        }
+
+        #endregion // Damage
+
         private void SetVisuals(int state, Sprite sprite, Color outline) {
             m_SpriteRenderer.sprite = sprite;
             m_Trail.startColor = m_Trail.endColor = outline;
             m_VisualState = state;
+        }
+
+        private void SetVisible(bool visible) {
+            m_SpriteRenderer.enabled = visible;
+            m_Trail.forceRenderingOff = !visible;
+        }
+
+        static private Player s_Current;
+
+        static public Player Current {
+            get { return s_Current; }
         }
     }
 }

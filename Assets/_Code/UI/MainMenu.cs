@@ -19,7 +19,7 @@ namespace SoulGiant
 
         private void HandleNewGameClicked() {
             // Start new game
-            SceneManager.LoadScene(m_FirstLevel);
+            Game.LoadScene(m_FirstLevel);
         }
 
         #endregion // Handlers
