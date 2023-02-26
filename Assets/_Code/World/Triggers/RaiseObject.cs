@@ -7,6 +7,7 @@ using UnityEngine;
 public class RaiseObject : MonoBehaviour
 {
     static public readonly StringHash32 Event_Death = "player::death";
+    static public readonly StringHash32 Event_Respawn = "player::respawn";
 
     [SerializeField] private GameObject m_ToRaise;
     [SerializeField] private float m_RaiseSpeed;
@@ -23,10 +24,14 @@ public class RaiseObject : MonoBehaviour
         m_State = RiseState.Idle;
         m_StartPos = m_ToRaise.transform.position;
 
-        Game.Event.Register(Event_Death, HandleDeath);
+        Game.Event.Register(Event_Respawn, HandleRespawn);
     }
 
-    private void HandleDeath() {
+    private void OnDisable() {
+        Game.Event.Deregister(Event_Respawn, HandleRespawn);
+    }
+
+    private void HandleRespawn() {
         m_ToRaise.transform.position = m_StartPos;
         m_State = RiseState.Idle;
     }

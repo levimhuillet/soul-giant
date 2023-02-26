@@ -102,6 +102,7 @@ namespace SoulGiant {
 
             if (m_InvulnerabilityTimer > 0) {
                 m_InvulnerabilityTimer -= Routine.DeltaTime;
+
                 if (m_InvulnerabilityTimer <= 0) {
                     m_HurtFlash.Stop();
                     SetVisible(true);
@@ -305,7 +306,7 @@ namespace SoulGiant {
             m_HealthRegenTimer = m_RegenDuration;
 
             if (m_InvulnerabilityTimer > 0) {
-                m_InvulnerabilityTimer *= 1.1f;
+                // m_InvulnerabilityTimer *= 1.1f; // <- causing issues with OnTriggerStay2D damage
                 return;
             }
 

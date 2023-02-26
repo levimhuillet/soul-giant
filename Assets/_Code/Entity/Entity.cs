@@ -19,7 +19,7 @@ namespace SoulGiant
         private bool m_TrackingPlayer;
         private GameObject m_TargetObj;
 
-        [SerializeField] private bool m_LaunchesProjectile;
+        private bool m_LaunchesProjectile;
 
         private enum FiringState
         {
@@ -65,7 +65,7 @@ namespace SoulGiant
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            // TODO: check if collision is player
+            // check if collision is player
             if (collision.gameObject.layer == Layers.Player) {
                 Player player = Player.Current;
                 player.Damage(new Player.DamageParams() {
@@ -75,8 +75,15 @@ namespace SoulGiant
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision) {
-            // TODO: check if collision is player
+        private void OnTriggerStay2D(Collider2D collision) {
+            // check if collision is player
+            if (collision.gameObject.layer == Layers.Player) {
+                Player player = Player.Current;
+                player.Damage(new Player.DamageParams() {
+                    Source = transform,
+                    Impulse = 0
+                });
+            }
         }
 
         #endregion // Unity Callbacks
@@ -124,10 +131,12 @@ namespace SoulGiant
                 Vector2 startPos = (Vector2) this.transform.position + m_InitData.ProjectileOffset;
                 float launchDirDeg;
                 if (m_InitData.ProjectileAim == EntityData.AimType.Direct) {
-                    launchDirDeg = Vector2.Angle(new Vector2(1, 0), ((Vector2)m_TargetObj.transform.position - startPos));
+                    launchDirDeg = Vector2.SignedAngle(new Vector2(1, 0), ((Vector2)m_TargetObj.transform.position - startPos).normalized);
                 } else {
-                    launchDirDeg = Vector2.Angle(new Vector2(1, 0), m_InitData.FixedProjectileAnim);
+                    launchDirDeg = Vector2.SignedAngle(new Vector2(1, 0), m_InitData.FixedProjectileAnim);
                 }
+
+                Debug.Log("[Launch] launchDirDeg: " + launchDirDeg);
 
                 float spreadStart = launchDirDeg - m_InitData.ProjectileCone / 2;
                 float deviationPerBullet = 0;
@@ -152,6 +161,10 @@ namespace SoulGiant
                     direction += RNG.Instance.NextFloat(-m_InitData.FireOffsetRange, m_InitData.FireOffsetRange);
 
                     float launchSpeed = m_InitData.LaunchSpeed + RNG.Instance.NextFloat(m_InitData.LaunchSpeedRange);
+
+                    Debug.Log("[Launch] direction: " + direction);
+                    Debug.Log("[Launch] directionRadians: " + direction * Mathf.Deg2Rad);
+                    Debug.Log("[Launch] directionNormalized: " + Geom.Normalized(direction * Mathf.Deg2Rad));
 
                     Projectile projectile = GameMechanics.AllocProjectile(m_InitData.ProjectileData, launchSpeed, Geom.Normalized(direction * Mathf.Deg2Rad));
                     projectile.transform.parent = this.transform;
