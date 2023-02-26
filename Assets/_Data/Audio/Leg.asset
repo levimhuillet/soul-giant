@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Leg
   m_EditorClassIdentifier: 
   m_id: leg
-  m_clip: {fileID: 8300000, guid: 803cd5c5e42c74e4992e49d657b8f393, type: 3}
+  m_clip: {fileID: 8300000, guid: f708eff494e625343837c425c2e0757c, type: 3}
   m_volume: 1
   m_pan: 0

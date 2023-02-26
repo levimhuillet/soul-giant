@@ -30,11 +30,13 @@ namespace SoulGiant
         private AudioData m_currData;
         private Queue<AudioLoopPair> m_audioQueue;
 
+        private float m_audioDefaultVolume;
+
         #region Static Functions
 
         public static void LoadAudio(AudioSource source, AudioData data) {
             source.clip = data.Clip;
-            source.volume = data.Volume;
+            source.volume = Instance.m_audioDefaultVolume * data.Volume; // new is in relation to master volume
             source.panStereo = data.Pan;
         }
 
@@ -54,6 +56,8 @@ namespace SoulGiant
 
             m_audioSrc = this.GetComponent<AudioSource>();
             m_audioQueue = new Queue<AudioLoopPair>();
+
+            m_audioDefaultVolume = m_audioSrc.volume;
         }
 
         private void Update() {

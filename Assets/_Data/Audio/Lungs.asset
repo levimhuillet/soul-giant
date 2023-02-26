@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lungs
   m_EditorClassIdentifier: 
   m_id: lungs
-  m_clip: {fileID: 8300000, guid: c0572378678d6bb409b6e3799953f165, type: 3}
+  m_clip: {fileID: 8300000, guid: fe51989aafa164c48983c3ccf8d2abf8, type: 3}
   m_volume: 1
   m_pan: 0

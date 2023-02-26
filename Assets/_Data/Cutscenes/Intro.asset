@@ -19,6 +19,3 @@ MonoBehaviour:
   - Image: {fileID: 21300000, guid: 3df9982044947da45b22f303c4b46c73, type: 3}
     Text: 
     Delay: 2
-  - Image: {fileID: 21300000, guid: 78e8400a23c1e4a4c939b3e8fd364780, type: 3}
-    Text: 
-    Delay: 3

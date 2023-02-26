@@ -20,11 +20,11 @@ MonoBehaviour:
   ProjectileAim: 0
   FixedProjectileAnim: {x: 0, y: 0}
   ProjectileOffset: {x: 0, y: 0}
-  ReloadRate: 2
-  LaunchSpeed: 6
+  ReloadRate: 1
+  LaunchSpeed: 7
   LaunchSpeedRange: 0
   FirePositionRange: 0
   FireOffsetRange: 0
-  ProjectileCount: 1
+  ProjectileCount: 2
   ProjectileSpreadType: 0
-  ProjectileCone: 0
+  ProjectileCone: 30

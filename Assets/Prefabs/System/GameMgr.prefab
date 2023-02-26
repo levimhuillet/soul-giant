@@ -283,7 +283,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -832,6 +832,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb4674588beac14bbbc0bcb7d98ecb7, type: 3}
+--- !u!224 &1759970640 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 959549011621060011, guid: 7cb4674588beac14bbbc0bcb7d98ecb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 959549009882978555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1759970641 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 959549011621060010, guid: 7cb4674588beac14bbbc0bcb7d98ecb7,
@@ -844,9 +850,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43dee6b6a23c414390ae6b261534dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1759970640 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 959549011621060011, guid: 7cb4674588beac14bbbc0bcb7d98ecb7,
-    type: 3}
-  m_PrefabInstance: {fileID: 959549009882978555}
-  m_PrefabAsset: {fileID: 0}

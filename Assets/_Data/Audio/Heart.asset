@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Heart
   m_EditorClassIdentifier: 
   m_id: heart
-  m_clip: {fileID: 8300000, guid: de813274f5291644090ec4018159c57f, type: 3}
+  m_clip: {fileID: 8300000, guid: e701b974bcb097c40b617800b7526e1c, type: 3}
   m_volume: 1
   m_pan: 0

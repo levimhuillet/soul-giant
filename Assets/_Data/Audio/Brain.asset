@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Brain
   m_EditorClassIdentifier: 
   m_id: brain
-  m_clip: {fileID: 8300000, guid: 05713735a06020d4e924a5bc22a2c2c2, type: 3}
+  m_clip: {fileID: 8300000, guid: 19733b3bd0d2de8489afd74040234380, type: 3}
   m_volume: 1
   m_pan: 0
