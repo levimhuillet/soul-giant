@@ -16351,7 +16351,7 @@ PrefabInstance:
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
       propertyPath: m_NextLevel
-      value: Lungs
+      value: Hub
       objectReference: {fileID: 0}
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
@@ -16425,8 +16425,18 @@ PrefabInstance:
       objectReference: {fileID: 606164358}
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}
+      propertyPath: m_CompletesIds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
+        type: 3}
       propertyPath: m_LightSequence.Array.size
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
+        type: 3}
+      propertyPath: m_CompletesIds.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8219625055550545510, guid: c7389e09bd4ae594a8131076fdb39b86,
         type: 3}

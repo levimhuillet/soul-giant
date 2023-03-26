@@ -4,6 +4,8 @@ using BeauUtil.Extensions;
 using BeauRoutine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections.Generic;
+using SoulGiant.Regions;
 
 namespace SoulGiant {
     [DefaultExecutionOrder(-10000)]
@@ -14,6 +16,8 @@ namespace SoulGiant {
         [SerializeField] private Textbox m_Textbox = null;
         [SerializeField] private ImageDisplay m_ImageDisplay = null;
         [SerializeField] private Fader m_Fader = null;
+        [SerializeField] private StateMgr m_StateMgr = null;
+
 
         #endregion // Inspector
 
@@ -60,6 +64,10 @@ namespace SoulGiant {
 
         static public KinematicsMgr Kinematics {
             get { return I?.m_KinematicsMgr; }
+        }
+
+        static public StateMgr State {
+            get { return I?.m_StateMgr; }
         }
 
         static public Textbox Textbox {

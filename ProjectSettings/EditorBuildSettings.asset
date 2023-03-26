@@ -24,11 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Regions/Stomach.unity
     guid: 0740bdf187efa104580477dc27276a21
   - enabled: 1
-    path: Assets/Scenes/Regions/Lungs.unity
-    guid: eb7cccc7428f6ab4f95ea2b36dadf459
-  - enabled: 1
     path: Assets/Scenes/Regions/Heart.unity
     guid: 3942e81485c81b54fbb9b4f784cef882
+  - enabled: 1
+    path: Assets/Scenes/Regions/Lungs.unity
+    guid: eb7cccc7428f6ab4f95ea2b36dadf459
   - enabled: 1
     path: Assets/Scenes/Regions/Brain.unity
     guid: a233681070a7909429c0ab2a4e208f91

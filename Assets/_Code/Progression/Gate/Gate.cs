@@ -1,9 +1,11 @@
-﻿using System;
+﻿using SoulGiant.Regions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace SoulGiant
 {
@@ -17,6 +19,10 @@ namespace SoulGiant
 
         [SerializeField] private string m_NextLevel;
         [SerializeField] private bool m_StartsUnlocked = true;
+        [SerializeField] private RegionId[] m_RequiredRegions;
+
+
+        [SerializeField] private RegionId[] m_CompletesIds;
 
         [SerializeField] private Sprite m_UnlockedSprite, m_LockedSprite;
         private SpriteRenderer m_SR;
@@ -40,11 +46,27 @@ namespace SoulGiant
             m_SequenceIndex = 0;
             m_InSequence = false;
 
+            InitLights();
+        }
+
+        private void Start() {
             if (m_StartsUnlocked) {
                 Unlock();
             }
+            else if (m_RequiredRegions.Length > 0) {
+                bool requirementsMet = true;
 
-            InitLights();
+                for (int i = 0; i < m_RequiredRegions.Length; i++) {
+                    if (!Game.State.IsRegionComplete(m_RequiredRegions[i])) {
+                        requirementsMet = false;
+                        break;
+                    }
+                }
+
+                if (requirementsMet) {
+                    Unlock();
+                }
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
@@ -53,9 +75,11 @@ namespace SoulGiant
                     Game.LoadScene(m_NextLevel);
                 }
                 else {
-                    // TEMP begin sequence (should be on scan)
-                    if (!m_InSequence) {
-                        PerformLightSequence();
+                    if (m_LightSequence.Length > 0) {
+                        // TEMP begin sequence (should be on scan)
+                        if (!m_InSequence) {
+                            PerformLightSequence();
+                        }
                     }
                 }
             }
@@ -64,6 +88,10 @@ namespace SoulGiant
         #region Helpers
 
         private void Unlock() {
+            for (int i = 0; i < m_CompletesIds.Length; i++) {
+                Game.State.CompleteRegion(m_CompletesIds[i]);
+            }
+
             m_Locked = false;
 
             // change sprite

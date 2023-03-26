@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 8427371092887166040}
   - component: {fileID: 286838646530651851}
   - component: {fileID: 2479575661966472379}
+  - component: {fileID: 3544063824875012975}
   m_Layer: 0
   m_Name: GameMgr
   m_TagString: Untagged
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_Textbox: {fileID: 1759970641}
   m_ImageDisplay: {fileID: 4325693419850798376}
   m_Fader: {fileID: 2011434565100891067}
+  m_StateMgr: {fileID: 3544063824875012975}
 --- !u!114 &1416421095723579380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +380,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6961b3b83164b924fa27ec47bf841f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3544063824875012975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416421095723579387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf9f534f533c5f44b69ef6bb110d111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1710024018321544462
